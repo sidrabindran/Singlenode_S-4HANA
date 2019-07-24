@@ -1,0 +1,5 @@
+az login (if logging in from any device other than cloud shell (bash) in the portal)
+
+az account set --subscription <<subscription_name>>
+
+az group create -n s4_test_deploy -l eastus2
