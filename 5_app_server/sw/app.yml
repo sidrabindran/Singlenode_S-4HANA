@@ -1,0 +1,11 @@
+---
+- hosts: "10.1.0.7"
+  become: true
+  roles:
+    - disk-setup
+    - nfs-mount
+    - swpm-download
+    - kernel-download
+    - hdbclient-download
+    - commonfiles-download
+    - di-install  

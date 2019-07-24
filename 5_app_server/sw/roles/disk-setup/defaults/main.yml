@@ -1,0 +1,9 @@
+---
+disks:
+  /dev/disk/azure/scsi1/lun0 : vg_usrsap
+
+logvols:
+  sap:
+    size: 100%FREE
+    vol: vg_usrsap
+    mountpoint: /usr/sap

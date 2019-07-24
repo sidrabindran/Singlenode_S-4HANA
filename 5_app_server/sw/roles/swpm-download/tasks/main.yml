@@ -1,0 +1,23 @@
+---
+# This role downloads and extracts SWPM
+- name: create install dir
+  file:
+    path: /usr/sap/install
+    state: directory
+
+- name: Download SAPCAR
+  get_url: 
+    url: "https://sapautobitseastus2.blob.core.windows.net/saphanabits/SAPCAR_1110-80000935.EXE"
+    dest: /usr/sap/install/SAPCAR_LINUX.EXE
+    mode : 0755
+
+- name: Download SWPM
+  get_url:
+    url: "https://sapautobitseastus2.blob.core.windows.net/swpm/SWPM10SP23_1-20009701.SAR"
+    dest: /usr/sap/install/SWPM.SAR
+
+- name: Extract SWPM
+  command: ./SAPCAR_LINUX.EXE -xvf SWPM.SAR -R SWPM
+  args:
+    chdir: /usr/sap/install
+    creates: /usr/sap/install/SWPM

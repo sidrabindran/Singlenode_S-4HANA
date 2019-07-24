@@ -1,0 +1,5 @@
+---
+- hosts: "10.1.0.10"
+  become: true
+  roles:
+    - nfs-export

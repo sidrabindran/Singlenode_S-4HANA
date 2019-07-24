@@ -1,0 +1,20 @@
+- name: Add mappings to /etc/hosts
+  blockinfile:
+    path: /etc/hosts
+    block: |
+      {{ item.ip }} {{ item.name }}
+    marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.name }}"
+  with_items:
+    - { name: tn1-hbd0, ip: 10.1.0.10 }
+    - { name: sapapp0, ip: 10.1.0.7 }
+
+- name: download DI template file
+  get_url:
+    url: https://sapautobitseastus2.blob.core.windows.net/ides1610/di_inifile.params
+    dest: /usr/sap/install/di_inifile.params
+
+- name: CI installation
+  shell: "./sapinst SAPINST_INPUT_PARAMETERS_URL=/usr/sap/install/di_inifile.params SAPINST_EXECUTE_PRODUCT_ID=NW_DI:S4HANA1610.CORE.HDB.PD SAPINST_SKIP_DIALOGS=true SAPINST_START_GUISERVER=false"
+  args:
+    chdir: /usr/sap/install/SWPM
+

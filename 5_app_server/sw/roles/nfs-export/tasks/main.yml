@@ -1,0 +1,13 @@
+- name: Ensure NFS utilities are installed
+  zypper:
+   name: nfs-kernel-server
+   state: present
+
+- name: Create mountable dir
+  file: path=/sapmnt state=directory mode=777 owner=root group=root
+
+- name: copy /etc/exports
+  template: src=exports.j2 dest=/etc/exports owner=root group=root
+
+- name: restart nfs service
+  command: rcnfsserver restart

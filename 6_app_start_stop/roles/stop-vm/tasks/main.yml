@@ -1,0 +1,5 @@
+- name: Deallocate the virtual machine
+  azure_rm_virtualmachine:
+    resource_group: s4hana
+    name: sapapp0
+    allocated: no

@@ -1,0 +1,11 @@
+---
+- hosts: "10.1.0.7"
+  become: true
+  roles:
+    - instance-stop
+
+- hosts: "localhost"
+  become: true
+  roles:
+    - stop-vm
+

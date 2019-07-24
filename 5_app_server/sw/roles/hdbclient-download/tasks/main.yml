@@ -1,0 +1,15 @@
+- name: create install dir
+  file:
+    path: /usr/sap/install/hdbclient
+    state: directory
+
+- name: download hdbclient files
+  get_url:
+    url: "https://sapautobitseastus2.blob.core.windows.net/ides1610/51051522.ZIP"
+    dest: /usr/sap/install/hdbclient/hdbclient.zip
+
+- name: extract hdbclient files
+  unarchive:
+    src: /usr/sap/install/hdbclient/hdbclient.zip
+    dest: /usr/sap/install/hdbclient
+    remote_src: yes

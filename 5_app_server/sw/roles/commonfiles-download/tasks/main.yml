@@ -1,0 +1,10 @@
+- name: download other content files
+  get_url:
+    url: "https://sapautobitseastus2.blob.core.windows.net/ides1610/otherfiles.zip"
+    dest: /usr/sap/install/otherfiles.zip
+
+- name: extract other content files
+  unarchive:
+    src: /usr/sap/install/otherfiles.zip
+    dest: /usr/sap/install
+    remote_src: yes

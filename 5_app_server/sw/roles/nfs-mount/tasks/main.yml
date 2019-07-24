@@ -1,0 +1,15 @@
+- name: Ensure NFS utilities are installed
+  zypper: 
+   name: nfs-client
+   state: present
+
+- name: Create mountable dir
+  file: path=/sapmnt_new state=directory mode=777 owner=root group=root
+
+- name: set mountpoints
+  mount: 
+   name: /sapmnt 
+   src: 10.1.0.10:/sapmnt 
+   fstype: nfs 
+   opts: defaults 
+   state: mounted

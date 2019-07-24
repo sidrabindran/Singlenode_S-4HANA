@@ -1,0 +1,15 @@
+- name: create install dir
+  file:
+    path: /usr/sap/install/kernel
+    state: directory
+
+- name: download kernel files
+  get_url:
+    url: "https://sapautobitseastus2.blob.core.windows.net/ides1610/51051432_3.ZIP"
+    dest: /usr/sap/install/kernel/kernel.zip
+
+- name: extract kernel files
+  unarchive:
+    src: /usr/sap/install/kernel/kernel.zip
+    dest: /usr/sap/install/kernel
+    remote_src: yes
