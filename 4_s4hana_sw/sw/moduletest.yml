@@ -10,5 +10,5 @@
       - hdbclient-download
       - commonfiles-download
       - ascs-install
-      - dbload-install
-      - ci-install
+      #- dbload-install
+      #- ci-install
