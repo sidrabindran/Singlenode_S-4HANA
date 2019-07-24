@@ -7,10 +7,7 @@ resource "azurerm_public_ip" "pip" {
   domain_name_label            = "${lower(var.name)}-${lower(var.az_domain_name)}"
 
   idle_timeout_in_minutes = 30
-
-  tags {
-    environment = "Terraform SAP HANA deployment"
-  }
+  
 }
 
 # Create network interface
