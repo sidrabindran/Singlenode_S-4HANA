@@ -15,10 +15,7 @@ resource "azurerm_storage_account" "bootdiagstorageaccount" {
   location                 = "${var.az_region}"
   account_tier             = "Standard"
   account_replication_type = "LRS"
-
-  tags {
-    environment = "Terraform SAP HANA deployment"
-  }
+  
 }
 
 # All disks that are in the storage_disk_sizes_gb list will be created
