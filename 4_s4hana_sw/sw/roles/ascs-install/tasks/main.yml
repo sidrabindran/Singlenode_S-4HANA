@@ -1,0 +1,9 @@
+- name: deploy install template
+  template:
+    src:  ascs_inifile.params
+    dest: /usr/sap/install/ascs_inifile.params
+
+- name: ascs installation
+  shell: "./sapinst SAPINST_INPUT_PARAMETERS_URL={{ install_dir }}/ascs_inifile.params SAPINST_EXECUTE_PRODUCT_ID=NW_ABAP_ASCS:S4HANA1610.CORE.HDB.ABAP SAPINST_SKIP_DIALOGS=true SAPINST_START_GUISERVER=false"
+  args:
+    chdir: /usr/sap/install/SWPM

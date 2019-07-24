@@ -1,0 +1,14 @@
+---
+- hosts: "10.1.0.21"
+  become: true
+  vars_files:
+    - s4hana_vars.yml
+  roles:
+          #- swpm-download
+          # - export-download
+          #  - kernel-download
+          # - hdbclient-download
+          # - commonfiles-download
+          #   - ascs-install
+          # - dbload-install
+      - ci-install

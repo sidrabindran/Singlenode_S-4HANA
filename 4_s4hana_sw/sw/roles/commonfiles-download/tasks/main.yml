@@ -1,0 +1,15 @@
+- name: create install dir
+  file:
+    path: /usr/sap/install/otherfiles
+    state: directory
+
+- name: download other content files
+  get_url:
+    url: "{{ url_commonfiles }}"
+    dest: /usr/sap/install/otherfiles/otherfiles.zip
+
+- name: extract other content files
+  unarchive:
+    src: /usr/sap/install/otherfiles/otherfiles.zip
+    dest: /usr/sap/install/otherfiles
+    remote_src: yes

@@ -1,0 +1,14 @@
+---
+disks:
+  /dev/disk/azure/scsi1/lun0 : vg_sapmnt
+  /dev/disk/azure/scsi1/lun1 : vg_usr_sap
+
+logvols:
+  sapmnt:
+    size: 100%FREE
+    vol: vg_sapmnt
+    mountpoint: /sapmnt
+  usr_sap:
+    size: 100%FREE
+    vol: vg_usr_sap
+    mountpoint: /usr/sap

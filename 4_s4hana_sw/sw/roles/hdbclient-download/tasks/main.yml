@@ -1,0 +1,15 @@
+- name: create install dir
+  file:
+    path: /usr/sap/install/hdbclient
+    state: directory
+
+- name: download hdbclient files
+  get_url:
+    url: "{{ url_hdbclient }}"
+    dest: /usr/sap/install/hdbclient/hdbclient.zip
+
+- name: extract hdbclient files
+  unarchive:
+    src: /usr/sap/install/hdbclient/hdbclient.zip
+    dest: /usr/sap/install/hdbclient
+    remote_src: yes

@@ -1,0 +1,10 @@
+- name: deploy install template
+  template:
+    src:  db_inifile.params
+    dest: /usr/sap/install/db_inifile_1.params
+
+- name: DB load installation
+  shell: "./sapinst SAPINST_INPUT_PARAMETERS_URL={{ install_dir }}/db_inifile.params SAPINST_EXECUTE_PRODUCT_ID=NW_ABAP_DB:S4HANA1610.CORE.HDB.ABAP SAPINST_SKIP_DIALOGS=true SAPINST_START_GUISERVER=false"
+  args:
+    chdir: /usr/sap/install/SWPM
+

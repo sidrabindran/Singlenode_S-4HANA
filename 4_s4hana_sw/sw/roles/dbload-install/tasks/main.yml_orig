@@ -1,0 +1,10 @@
+- name: download DB load template file
+  get_url:
+    url: https://sapautobitseastus2.blob.core.windows.net/ides1610/db_inifile.params
+    dest: /hana/shared/install/db_inifile.params
+
+- name: DB load installation
+  shell: "./sapinst SAPINST_INPUT_PARAMETERS_URL=/hana/shared/install/db_inifile.params SAPINST_EXECUTE_PRODUCT_ID=NW_ABAP_DB:S4HANA1610.CORE.HDB.ABAP SAPINST_SKIP_DIALOGS=true SAPINST_START_GUISERVER=false"
+  args:
+    chdir: /hana/shared/install/SWPM
+

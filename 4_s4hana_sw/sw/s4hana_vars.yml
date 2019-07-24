@@ -1,0 +1,40 @@
+# replace with download URL for SAPCAR
+url_sapcar: https://sapautobitseastus2.blob.core.windows.net/saphanabits/SAPCAR_1110-80000935.EXE
+
+# replace with download URL for SWPM
+url_swpm: https://sapautobitseastus2.blob.core.windows.net/swpm/SWPM10SP23_1-20009701.SAR
+
+#export URL
+url_export1: https://sapautobitseastus2.blob.core.windows.net/ides1610/51052822_part01.exe
+url_export2: https://sapautobitseastus2.blob.core.windows.net/ides1610/51052822_part02.rar
+url_export3: https://sapautobitseastus2.blob.core.windows.net/ides1610/51052822_part03.rar
+url_export4: https://sapautobitseastus2.blob.core.windows.net/ides1610/51052822_part04.rar
+url_export5: https://sapautobitseastus2.blob.core.windows.net/ides1610/51052822_part05.rar
+url_export6: https://sapautobitseastus2.blob.core.windows.net/ides1610/51052822_part06.rar
+url_export7: https://sapautobitseastus2.blob.core.windows.net/ides1610/51052822_part07.rar
+url_export8: https://sapautobitseastus2.blob.core.windows.net/ides1610/51052822_part08.rar
+
+url_kernel: https://sapautobitseastus2.blob.core.windows.net/ides1610/51051432_3.ZIP
+url_hdbclient: https://sapautobitseastus2.blob.core.windows.net/ides1610/51051522.ZIP
+url_commonfiles: https://sapautobitseastus2.blob.core.windows.net/ides1610/otherfiles.zip
+
+password: Hana@123456
+otherfiles: /usr/sap/install/otherfiles
+kernel: /usr/sap/install/kernel
+export: /usr/sap/install/export
+client: /usr/sap/install/hdbclient
+ascs_instance_num: 10
+virtual_hostname: hanadb
+install_dir: /usr/sap/install
+sap_sid: CGA
+ci_instance_num: 12
+
+hana_host: 10.1.0.30
+hana_hostname: hanadb
+hana_ip: 10.1.0.30
+hana_sid: HN2
+hana_instance_num: 00
+hana_password: Hana@123456
+hana_user_name: SYSTEM
+
+db_load_job_num: 5

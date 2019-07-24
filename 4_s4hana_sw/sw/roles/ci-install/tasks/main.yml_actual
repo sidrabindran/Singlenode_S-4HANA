@@ -1,0 +1,19 @@
+- name: Add mappings to /etc/hosts
+  blockinfile:
+    path: /etc/hosts
+    block: |
+      {{ item.ip }} {{ item.name }}
+    marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.name }}"
+  with_items:
+    - { name: {{ hana_hostname }}, ip: {{ hana_ip }} }
+
+- name: deploy install template
+  template:
+    src:  ci_inifile.params
+    dest: /usr/sap/install/ci_inifile.params
+
+- name: CI installation
+  shell: "./sapinst SAPINST_INPUT_PARAMETERS_URL={{ install_dir }}/ci_inifile.params SAPINST_EXECUTE_PRODUCT_ID=NW_ABAP_CI:S4HANA1610.CORE.HDB.ABAP SAPINST_SKIP_DIALOGS=true SAPINST_START_GUISERVER=false"
+  args:
+    chdir: /usr/sap/install/SWPM
+

@@ -1,0 +1,56 @@
+---
+# This role downloads and extracts export
+- name: create export dir
+  file:
+    path: /usr/sap/install/export
+    state: directory
+
+- name: Download Export1
+  get_url:
+    url: "{{ url_export1 }}"
+    dest: /usr/sap/install/export/export1.exe
+
+- name: Download Export2
+  get_url:
+    url: "{{ url_export2 }}"
+    dest: /usr/sap/install/export/export2.rar
+
+- name: Download Export3
+  get_url:
+    url: "{{ url_export3 }}"
+    dest: /usr/sap/install/export/export3.rar
+
+- name: Download Export4
+  get_url:
+    url: "{{ url_export4 }}"
+    dest: /usr/sap/install/export/export4.rar
+
+- name: Download Export5
+  get_url:
+    url: "{{ url_export5 }}"
+    dest: /usr/sap/install/export/export5.rar
+   
+- name: Download Export6
+  get_url:
+    url: "{{ url_export6 }}"
+    dest: /usr/sap/install/export/export6.rar
+
+- name: Download Export7
+  get_url:
+    url: "{{ url_export7 }}"
+    dest: /usr/sap/install/export/export7.rar
+
+- name: Download Export8
+  get_url:
+    url: "{{ url_export8 }}"
+    dest: /usr/sap/install/export/export8.rar
+
+- name: Install unrar
+  zypper:
+    name: unrar
+    state: present
+
+- name: Unrar export
+  command: unrar x export1.exe
+  args:
+    chdir: /usr/sap/install/export
