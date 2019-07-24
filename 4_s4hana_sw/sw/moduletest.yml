@@ -4,11 +4,11 @@
   vars_files:
     - s4hana_vars.yml
   roles:
-          #- swpm-download
-          # - export-download
-          #  - kernel-download
-          # - hdbclient-download
-          # - commonfiles-download
-          #   - ascs-install
-          # - dbload-install
+      - swpm-download
+      - export-download
+      - kernel-download
+      - hdbclient-download
+      - commonfiles-download
+      - ascs-install
+      - dbload-install
       - ci-install
