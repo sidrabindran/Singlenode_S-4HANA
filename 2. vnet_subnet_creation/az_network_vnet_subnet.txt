@@ -1,0 +1,3 @@
+az network vnet create --name <<vnet_name>> --subscription <<subscription_name>> --resource-group <<resource_group_name>> --address-prefixes <<available_CIDR_address_range>> --subnet-name <<subnet-name>> --subnet-prefixes <<availbe_CIDR_address_range_subset>> --location <<location>>
+
+az network vnet create --name sapvnet --subscription Siddrab --resource-group s4_test_deploy --address-prefixes 10.2.0.0/16 --subnet-name default --subnet-prefixes 10.2.0.0/24 --location eastus2
