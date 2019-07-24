@@ -2,7 +2,6 @@ hana_host: 10.1.0.20
 sap_sid: HN2
 sap_instancenum: 00
 sap_hostname: hanadb
-hana1_db_mode: multiple_containers
 
 pwd_os_sapadm: Hana@123456
 pwd_os_sidadm: Hana@123456

@@ -30,7 +30,7 @@ vm_name = "hanadb"
 sap_sid = "HN1"
 
 # Resource group where Virtual Network in deployed
-net_rg_name = "East2_VNET"
+net_rg_name = "s4_test_deploy"
 
 # Name of the Virtual network where the VM's will be deployed
 vnet_name = "sapvnet"

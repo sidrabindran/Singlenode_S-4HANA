@@ -3,8 +3,8 @@ disks:
   /dev/disk/azure/scsi1/lun0 : vg_hana_data_{{ sap_sid }}
   /dev/disk/azure/scsi1/lun1 : vg_hana_log_{{ sap_sid }}
   /dev/disk/azure/scsi1/lun2 : vg_hana_shared
-  /dev/disk/azure/scsi1/lun2 : vg_sapmnt
-  /dev/disk/azure/scsi1/lun2 : vg_usr_sap
+  /dev/disk/azure/scsi1/lun3 : vg_sapmnt
+  /dev/disk/azure/scsi1/lun4 : vg_usr_sap
 
 logvols:
   hana_shared:
