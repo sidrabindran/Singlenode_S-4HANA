@@ -1,0 +1,22 @@
+hana_host: 10.1.0.20
+sap_sid: HN2
+sap_instancenum: 00
+sap_hostname: hanadb
+hana1_db_mode: multiple_containers
+
+pwd_os_sapadm: Hana@123456
+pwd_os_sidadm: Hana@123456
+pwd_db_system: Hana@123456
+
+# Provide True or false
+use_hana2: false
+
+# Database Mode ( Default: multiple_containers; Valid values: single_container | multiple_containers )
+hana1_db_mode: multiple_containers
+
+
+# replace with download URL for SAPCAR
+url_sapcar: https://sapautobitseastus2.blob.core.windows.net/saphanabits/SAPCAR_1110-80000935.EXE
+
+# replace with download URL for HDB server
+url_hdbserver: https://sapautobitseastus2.blob.core.windows.net/saphanabits/IMDB_SERVER100_122_21-10009569.SAR

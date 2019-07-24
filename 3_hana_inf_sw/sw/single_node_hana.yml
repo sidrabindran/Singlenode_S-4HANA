@@ -1,0 +1,8 @@
+---
+- hosts: "10.1.0.20"
+  become: true
+  vars_files:
+    - ./hana_vars.yml
+  roles:
+    - disk-setup
+    - saphana-install
