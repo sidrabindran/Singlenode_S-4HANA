@@ -1,5 +1,5 @@
 ---
-- hosts: "10.1.0.21"
+- hosts: " "
   become: true
   vars_files:
     - s4hana_vars.yml
