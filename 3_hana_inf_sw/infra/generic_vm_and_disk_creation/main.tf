@@ -9,14 +9,14 @@ resource "random_id" "randomId" {
 }
 
 # Create storage account for boot diagnostics
-resource "azurerm_storage_account" "bootdiagstorageaccount" {
-  name                     = "diag${random_id.randomId.hex}"
-  resource_group_name      = "${var.az_resource_group}"
-  location                 = "${var.az_region}"
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+#resource "azurerm_storage_account" "bootdiagstorageaccount" {
+ # name                     = "diag${random_id.randomId.hex}"
+ # resource_group_name      = "${var.az_resource_group}"
+ # location                 = "${var.az_region}"
+ # account_tier             = "Standard"
+ # account_replication_type = "LRS"
   
-}
+#}
 
 # All disks that are in the storage_disk_sizes_gb list will be created
 resource "azurerm_managed_disk" "disk" {
@@ -76,11 +76,6 @@ resource "azurerm_virtual_machine" "vm" {
     }
   }
 
-  boot_diagnostics {
-    enabled = "true"
-
-    storage_uri = "${azurerm_storage_account.bootdiagstorageaccount.primary_blob_endpoint}"
-  }
 
   tags = "${merge(map(var.machine_type, ""), var.tags)}"
 }
